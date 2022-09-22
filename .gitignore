@@ -1,0 +1,30 @@
+## Gitgnorable R stuff
+.Rproj.user/
+
+## Gitgnorable latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+__latexindent_temp.tex
+*fdb_latexmk
+*.synctex.gz
+*.pdf
+
+write_up word/
+
+## Gitgnorable bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
