@@ -1,24 +1,27 @@
-# Replication repository description for Nava and Dong (2022)'s JAAEA, *The impact of taxing sugar-sweetened beverages in México: A censored QUAI demand system approach*
+# Replication repository description for Nava, Ridley and Dall'Erba Agricultural Economics Forthcoming, *A model of the U.S. food system: What are the determinants of the state vulnerabilities to production shocks and supply chain disruptions?*
 
 Correspinding author: [Noé J Nava](noe.nava@usda.gov).
 
-**Goal:** Replicate the results in `Table C.1`, `Table 2`, and `Table 3` in the paper. 
+**Goal:** Replicate the results in `Figure 1`, `Table 2`, and `Table 3` in the paper. 
 
-*Note:* Our analysis is composed of two main procedures. A series of truncated log-likelihood functions are parametized and optimized to estimate the parameters described in `Table C.1`. Then, numerical approaches are employed, along with the previously estimated parameters, to calculate demand elasticities shown in `Table 2` and `Table 3`. `Table 4` is superfluous to our main analysis, but such elasticities can be estimated using the same procedures employed for the previous tables and previous data.
+*Note:* Our analysis is composed of two main procedures. In the first step, we employ a structural regression analysis derived from the gravity trade model based on the work of Eaton and Kortum (2002). The end goal of the previous exercise is to recover a trade elasticity value. Our results are reported in `Figure 1` and `Table 2`. The second step uses simulations and the trade elasticity value to study counterfactuals based on productivity shocks and supply chain disruptions. Our results are reported in `Table 3`.
 
-### `Table C.1`: 
+### `Figure 1`: 
 
-There are two approaches to estimate the parameters in `Equation 9` and `Equation 12` as shown in `Table C.1` and described in `section 3.3` and `Appendix D`. The first is a tested one which reflects the results in our paper. The [APTECH: Gauss](https://www.aptech.com/) script is `code/TabC1_tested.gss` and requires the datasets `data/ssb_dataset_2018.dat` and `data/ssb_dataset_2018.dht`. The datasets are in [APTECH: Gauss](https://www.aptech.com/) format.
+In `Figure 1`, we report the results from a gravity regression illustrated in `Equation 12`, where the left hand side describes the role of distance to determine normalized trade, and the right hand side describes the exporter and importer fixed effects. `code/fig1.do` is the script to replicate these figures. Notice that I am not sharing codes regarding the formatting of the table. Explanation of the regression is in the paper.
 
-The second approach is *untested*. What it means is that we cannot guarantee the approach replicates the results in our paper since R has computational limitations. The script is `code/TabC1_untested.R` and uses the dataset `data/ssb_dataset_2018.csv`. The computational limitation is related to the estimation of the (n x p) Jacobian matrix required for our algorithm to find the solution. We were unable to check if our R script had any bug since our algorithm never converged. Despite that, we prepared this R script for those interested in the computational task behind our paper but do not know how to read Gauss scripts.
+### `Table 2`:
 
-I am testing Julia language at the moment, but I was told the language can address the computational task.
+In `Table 2`, we report the results from the regression illustrted in `Equation 13`, where the dependent variables are the fixed effects shown in `Figure 1`'s right panel. `code/tab2.do` is the script to replicate this table. Explanation of the regression is in the paper.
 
-### `Table 2` and `Table 3`:
+### `Table 3`:
 
-Our numerical approach to the calculation of our demand elasticities is described in `Appendix E`. The R script is `code/Tab2_Tab3_tested.R` and uses output from the estimation of `code/TabC1_tested.gss`. Because I expect complications regarding the estimation of the parameters and the variance-covariance matrix depicted in `Table C.1`, the script is directed to use `TabC1_params.Rdata` for the parameters and `TabC1_vcov.xlsx` for the variance-covariance matrix.
+In `Table 3`, we report the results from our two simulations that use `Equation 9` and `Equation 10`. Simulations are explained in the paper. Notice that you will need to install `GE_gravity_tech.ado` in Stata. Notice that I am just sharing the results of the simulations and not the scripts to exactly replicate the maps. `code/counterfactuals_estimation.do` is the script to replicate this table.
+s
 
 **How to cite this article:**
 
-Nava, Noé J., and Diansheng Dong. 2022. "The impact of taxing sugary-sweetened beverages in México: A censored QUAI demand system approach." *Journal of Agricultural and Applied Economics Association*, 1(1):1-23: https://doi.org/10.1002/jaa2.6
+Nava, Noé J., Ridley, William C., and Dall'Erba, Sandy. Forthcoming in the Agricultural Economics. "A model of the U.S. food system: What are the determinants of the state vulnerabilities to production shocks and supply chain disruptions?"
+
+A working paper can be found in [CREATE](https://create.ace.illinois.edu/files/2022/02/Nava_ridley_dallerba_CREATE.pdf).
 
