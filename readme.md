@@ -21,7 +21,7 @@ s
 
 **How to cite this article:**
 
-Nava, Noé J., Ridley, William C., and Dall'Erba, Sandy. Forthcoming in the Agricultural Economics. "A model of the U.S. food system: What are the determinants of the state vulnerabilities to production shocks and supply chain disruptions?"
+Nava, N. J., Ridley, W., &Dall’erba, S. (2022). A model of the U.S. foodsystem: what are the determinants of the statevulnerabilities to production shocks and supplychain disruptions?.Agricultural Economics,1–16.https://doi.org/10.1111/agec.12750
 
-A working paper can be found in [CREATE](https://create.ace.illinois.edu/files/2022/02/Nava_ridley_dallerba_CREATE.pdf).
+
 
